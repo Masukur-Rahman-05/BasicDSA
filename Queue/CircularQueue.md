@@ -29,4 +29,4 @@ this.size++;
 
 ### ✅ Checks:
 
-    **If size === capacity, the queue is full → can't enqueue.**
+    If size === capacity, the queue is full → can't enqueue.
