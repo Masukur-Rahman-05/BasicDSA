@@ -30,3 +30,59 @@ this.size++;
 ### ✅ Checks:
 
     If size === capacity, the queue is full → can't enqueue.
+
+# 2. dequeue()
+
+```js
+const element = this.array[this.front];
+this.array[this.front] = undefined; // Optional cleanup
+this.front = (this.front + 1) % this.capacity;
+this.size--;
+return element;
+```
+
+    * Returns the front element.
+
+    * Cleans it up (optional but good for memory).
+
+    * Moves the front pointer forward circularly.
+
+    * Decreases size.
+
+## ✅ Checks:
+
+    If size === 0, queue is empty → return -1.
+
+## 3. getFront()
+
+```js
+return this.array[this.front];
+```
+
+    Directly returns the current front element.
+
+## 4. getRear()
+
+```js
+const rear = (this.front + this.size - 1) % this.capacity;
+return this.array[rear];
+```
+
+    Calculates the index of the last (rear) element using modular arithmetic.
+
+## 5. isEmpty() / isFull()
+
+```js
+return this.size === 0; // isEmpty
+return this.size === this.capacity; // isFull
+```
+
+    Simple checks based on size.
+
+# 🧠 Why Use a Circular Queue?
+
+    * Avoids shifting elements on every dequeue like a normal array queue.
+
+    * Achieves O(1) time complexity for enqueue() and dequeue().
+
+    * Efficient use of fixed space, ideal for embedded systems, network buffers, job scheduling, etc.
