@@ -10,7 +10,7 @@ Unlike a standard queue (FIFO), a dequeue supports:
 
     Deletion from both front and rear
 
-<mark style="background-color:yellow">**While push() and pop() are constant time, unshift() and shift() are linear time operations due to element shifting.**</mark>
+<mark >**While push() and pop() are constant time, unshift() and shift() are linear time operations due to element shifting.**</mark>
 
 For large-scale use, consider using a linked list or circular buffer to maintain efficiency.
 
