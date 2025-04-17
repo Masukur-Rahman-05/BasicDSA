@@ -100,7 +100,19 @@ class LinkedList {
     return true;
   }
 
+  removeAll() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+
+    return true;
+  }
+
   print() {
+    if (this.length === 0) {
+      console.log("List is Empty");
+      return false;
+    }
     let current = this.head;
     let result = "";
     while (current) {
@@ -121,4 +133,8 @@ node.prepend(40);
 console.log(node.print());
 
 node.removeByValue(80);
+console.log(node.print());
+
+node.removeAll();
+
 console.log(node.print());
