@@ -46,6 +46,9 @@ class LinkedList:
         prev.next = node
         self.length += 1
 
+        if node.next == None:
+            self.tail = node
+
         return True
 
     
