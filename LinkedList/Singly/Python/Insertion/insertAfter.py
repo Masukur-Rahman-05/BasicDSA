@@ -22,20 +22,20 @@ class LinkedList:
         return True
     
 
-    def insertBefore(self, target, data):
+    def insertAfter(self, target, data):
 
         current = self.head
 
         node = Node(data)
 
         if(self.head.data == target):
-            node.next = self.head
-            self.head = node
+            node.next = self.head.next
+            self.head.next = node
             self.length += 1
 
             return True
         
-        while current.next != None and current.next.data != target:
+        while current != None and current.data != target:
             current = current.next
 
         if current.next == None:
@@ -67,8 +67,8 @@ if __name__ == "__main__":
     linked_list.prepend(30)
     linked_list.prepend(40)
 
-    linked_list.insertBefore(30,50)
-    linked_list.insertBefore(20,70)
+    linked_list.insertAfter(30,50)
+    linked_list.insertAfter(20,70)
 
     linked_list.print()
 
