@@ -53,4 +53,4 @@ graph.add_edge("B","D")
 graph.add_edge("C","E")
 graph.add_edge("D","F")
 
-graph.dfs("A")
+graph.dfs_iterative("A")
